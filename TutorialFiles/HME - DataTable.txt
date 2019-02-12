@@ -1,0 +1,13 @@
+﻿TableOfContacts
+sId	   sName    	sFamily	      sJob	        sHomePhoneNo	sWorkPhoneNo
+int	   nvarchar50	nvarchar50    nvarchar50	nvarchar50      nvarchar50
+
+در جدول بالا sId
+تنها یک شمارنده است و به هر نفر تنها یک شماره ی شناسه تعلق میگیرد.
+
+sId  	MobilePhoneNo 	IsInWhatsapp 	IsInTelegram	IsInInstagram
+int	nvarchar50	bit		bit		bit
+
+در جدول دوم شمارنده ای وجود ندارد و 
+sId بیانگر شناسه ی شخص در جدول اول است. یعنی ممکن است در جدول دوم چندین رکورد با فیلد sId
+یکسان داشته باشیم.
