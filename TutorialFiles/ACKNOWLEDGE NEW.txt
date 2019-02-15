@@ -10,3 +10,7 @@ hi my best friend
 ( AND COMMIT AND PUSH IT TO THE SERVER ), BUT ACCIDENTALLY DELETE IT FROM 
 YOUR OWN PROJECT ( LOCAL ), YOU CAN'T RETRIEVE THE FILE :((( 
 YOU HAVE TO DELETE YOUR WHOLE LOCAL PROJECT FOLDER AND CLONE WHOLE PROJECT OVER AGAIN
+-------------------
+thank you.....:)))
+------------------
+no it is not neccessary to delete whole project.you shall pull it and your project will upadate in local
