@@ -12,3 +12,5 @@ YOUR OWN PROJECT ( LOCAL ), YOU CAN'T RETRIEVE THE FILE :(((
 YOU HAVE TO DELETE YOUR WHOLE LOCAL PROJECT FOLDER AND CLONE WHOLE PROJECT OVER AGAIN
 -------------------
 thank you.....:)))
+------------------
+no it is not neccessary to delete whole project.you shall pull it and your project will upadate in local
