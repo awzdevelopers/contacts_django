@@ -2,7 +2,7 @@
 class Human():
 
     def __init__(self):
-        print("human creared")
+        print("human creared,Hi ")
 
     def Eat(self):
         print("human eating")
