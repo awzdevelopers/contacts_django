@@ -1,0 +1,13 @@
+body{
+  align-items: center;
+}
+td{
+  color: red;
+}
+
+table{
+  border: 2px solid blue;
+}
+th{
+  border: 2px solid black;
+}

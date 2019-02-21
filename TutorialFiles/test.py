@@ -28,4 +28,4 @@ class contact(Human):
 
 contact1=contact(name="omid", family="hamidi", address="ahvaz")
 contact1.walking()
-print(contact1)                    
+print(contact1)
