@@ -1,5 +1,6 @@
 body{
   align-items: center;
+  background-color: black;
 }
 td{
   color: red;
@@ -10,4 +11,8 @@ table{
 }
 th{
   border: 2px solid black;
+}
+p
+{
+  padding-left: 100px;
 }

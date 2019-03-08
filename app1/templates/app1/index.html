@@ -1,27 +1,11 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static "app1/styles/style.css" %}">
+
     <title></title>
   </head>
   <body>
-    {% if date_access %}
-    <table>
-    <thead>
-      <th>site name</th>
-      <th>date accessed</th>
-    </thead>
-    {% for ac in date_access %}
-    <tr>
-      <td>{{ ac.name }}</td>
-      <td>{{ ac.date }}</td>
-    </tr>
-    {% endfor %}
-    </table>
-    {% else %}
-    <p>رکوردی وجود ندارد</p>
-    {% endif %}
+
   </body>
 </html>
