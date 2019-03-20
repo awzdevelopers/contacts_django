@@ -8,8 +8,10 @@ def index(request):
     phones=PhonesTable.objects.all()
     return render(request, 'app1/index.html', context={'ph':phones})
 
-<<<BY HME>>>
 
-def function(request):
+# <<<BY HME>>>
+
+
+def contactPage(request):
     names = ContactsTable.objects.all()
-    return render(request, 'app1/index.html', context={'nm':names + familys})
+    return render(request, 'app1/contacts.html', context={'nm':names})
