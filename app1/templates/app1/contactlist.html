@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+    <!-- JQuery -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
+    <title></title>
+
+</head>
+<body>
+
+    <p>مشخصات شماره تلفن</p>
+    {% if nu.contacts == nm.name %}
+    {% for a in nu %}
+    <ul>
+
+        <li><p>نام مخاطب</p>{{ a.contact }}</li>
+        <li><p>شماره همراه</p>{{ a.MobilePhoneNo }}</li>
+        <li><p>واتس آپ</p>{{ a.IsInWhatsapp? "yes":"no" }}</li>
+        <li><p>تلگرام</p>{{ a.IsInTelegram? "yes":"no" }}</li>
+        <li><p>اینستاگرام</p>{{ a.IsInInstagram? "yes":"no" }}</li>
+        <li><p>شماره منزل</p>{{ a.sHomePhoneNo }}</li>
+        <li><p>شماره محل کار</p>{{ a.sWorkPhoneNo }}</li>
+
+
+    </ul>
+    {% endfor %}
+    {% endif %}
+</body>
+</html>
+

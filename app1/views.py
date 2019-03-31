@@ -15,3 +15,11 @@ def index(request):
 def contactPage(request):
     names = ContactsTable.objects.all()
     return render(request, 'app1/contacts.html', context={'nm':names})
+
+def contactPage(request):
+    names = ContactsTable.objects.all()
+    return render(request, 'app1/contactlist.html', context={'nm':names})
+
+def numberPage(request):
+    numbers = PhonesTable.objects.all()
+    return render(request, 'app1/contactlist.html', context={'nu':numbers})
