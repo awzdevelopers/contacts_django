@@ -20,4 +20,5 @@ from app1 import views
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
+    url(r'^app1/',include('app1.urls'))
 ]
