@@ -1,0 +1,38 @@
+body {
+  direction: rtl;
+  background-color: #b14f4f;
+  font-family: tahoma;
+}
+.head {
+  background: #0b82c6;
+}
+.head-nav a {
+  color : #FFF !important;
+
+}
+.head-nav a:hover {
+  color : #fcb21f !important;
+
+}
+.Logo {
+  position: absolute;
+  left: 0;
+  padding-left: 10px;
+  color: #FFF;
+}
+
+.location {
+  background-color: #cccccc;
+  width: 100%;
+  height: 30px;
+  direction: rtl;
+  text-align: right;
+}
+.where {
+  color: #0b82c6;
+  padding-right: 5px;
+  display: inline-block;
+}
+.contact-table {
+  direction: rtl;
+}

@@ -1,11 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
+{% load static %}
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
     <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
     <!-- JQuery -->
@@ -13,31 +15,94 @@
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
-    <title></title>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet"  href="{% static 'css/stylesheet.css' %}">
+    <title>AWZ-Developers</title>
 
 </head>
-<body>
+<body class="bg-success">
+  <!-- start head content -->
+  <div class="head bg-warning">
+    <div class="container">
+      <!--<div class="row">-->
+        <div class="navbar navbar-expand-sm navbar-light" >
+          <ul class="navbar-nav head-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">خانه</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'app1:contactPage' %}">لیست مخاطبین</a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="{% url 'app1:NumberPage' %}">لیست کامل مخاطبین</a>
+            </li>
+          </ul>
+          <!-- AWZ developers logo -->
+          <div class="Logo">
+            <p>AWZ Developer's</p>
+          </div>
+          <!-- End AWZ developer logo -->
+        </div>
+      <!--</div>-->
+    </div>
+  </div>
+  <!-- end of head content -->
+  <!--start location of site -->
+  <div class="location">
+    <div class="container">
+      <p class="where">صفحه مخاطبین/مشخصات شماره تلفن</p>
+    </div>
+  </div>
+  <!-- end of location -->
+  <div>
+    <form method="POST">
+      {{ frm.as_p }}
+      {% csrf_token %}
 
-    <p>مشخصات شماره تلفن</p>
-    {% if nu.contacts == nm.name %}
-    {% for a in nu %}
-    <ul>
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+  </div>
+  <!-- start table -->
+    <div class="container contact-table">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>نام مخاطب</th>
+              <th>شماره همراه</th>
+              <th> واتساپ</th>
+              <th> تلگرام</th>
+              <th> اینستگرام</th>
+              <th> شماره منزل</th>
+              <th> شماره محل کار</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% if nu %}
+            {% for a in nu %}
+              <tr>
+                <td>{{ a.contacts.name }}</td>
+                <td>{{ a.contacts.family }}</td>
 
-        <li><p>نام مخاطب</p>{{ a.contact }}</li>
-        <li><p>شماره همراه</p>{{ a.MobilePhoneNo }}</li>
-        <li><p>واتس آپ</p>{{ a.IsInWhatsapp? "yes":"no" }}</li>
-        <li><p>تلگرام</p>{{ a.IsInTelegram? "yes":"no" }}</li>
-        <li><p>اینستاگرام</p>{{ a.IsInInstagram? "yes":"no" }}</li>
-        <li><p>شماره منزل</p>{{ a.sHomePhoneNo }}</li>
-        <li><p>شماره محل کار</p>{{ a.sWorkPhoneNo }}</li>
+                <td>{{ a.MobilePhoneNo }}</td>
+                <td>{{ a.IsInWhatsapp}}</td>
+                <td>{{ a.IsInTelegram}}</td>
+                <td>{{ a.IsInInstagram }}</td>
+                <td>{{ a.sHomePhoneNo }}</td>
+                <td>{{ a.sWorkPhoneNo }}</td>
+              </tr>
+            {% endfor %}
+            {% endif %}
+          </tbody>
+        </table>
+    </div>
+  <!-- end of table-->
 
+<!-- <script src="js/jquery.slim.min.js"></script>
+<script src="js/tether.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/scripts.js"></script> -->
 
-    </ul>
-    {% endfor %}
-    {% endif %}
 </body>
 </html>
-

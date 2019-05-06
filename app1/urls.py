@@ -7,6 +7,6 @@ urlpatterns=[
          url(r'^contacts/', views.contactPage,name='contactPage'),
 
          #<<< By HME >>>
-         url(r'^numbers/', views.numberPage,name='NumberInfo'),
+         url(r'^numbers/', views.numberPage,name='NumberPage'),
 
 ]

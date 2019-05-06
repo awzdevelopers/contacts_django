@@ -13,8 +13,7 @@ class ContactsTable(models.Model):
 class PhonesTable(models.Model):
     contacts=models.ForeignKey(ContactsTable,on_delete=models.CASCADE)
     MobilePhoneNo=models.CharField(max_length=20)
-    IsInWhatsapp=models.BooleanField()
-    IsInTelegram=models.BooleanField()
-    IsInInstagram=models.BooleanField()
+    IsInWhatsapp=models.BooleanField(null=True)
+    IsInTelegram=models.BooleanField(null=True)
     sHomePhoneNo=models.CharField(max_length=20)
     sWorkPhoneNo=models.CharField(max_length=20)
