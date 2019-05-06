@@ -9,4 +9,6 @@ urlpatterns=[
          #<<< By HME >>>
          url(r'^numbers/', views.numberPage,name='NumberPage'),
 
+
+
 ]

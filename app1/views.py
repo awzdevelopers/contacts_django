@@ -9,6 +9,7 @@ def index(request):
     return render(request, 'app1/index.html', context={'ph':phones})
 
 
+
 # <<<BY HME>>>
 
 
@@ -34,6 +35,6 @@ def numberPage(request):
         frm=PhoneForm(request.POST)
         if frm.is_valid():
             frm.save(commit=True)
-            
+
     numbers = PhonesTable.objects.all()
     return render(request, 'app1/contactlist.html', context={'nu':numbers,'frm':frm})
