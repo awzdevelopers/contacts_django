@@ -1,33 +1,39 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <!-- Font Awesome -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
-<!-- Bootstrap core CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!-- Material Design Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
-<!-- JQuery -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- Bootstrap tooltips -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!-- MDB core JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
-    <title></title>
+{% extends 'app1/index.html' %}
+  <!-- end of location -->
+  {% block contacts %}
 
-  </head>
-  <body>
+<div>
+  <form method="POST">
+    {{ frm.as_p }}
+    {% csrf_token %}
 
-<p>صفحه مخاطبین</p>
-    {% if nm %}
-    {% for a in nm %}
-    <ul>
-      <li>{{ a.name }}  {{ a.job }}</li>
-    </ul>
-    {% endfor %}
-{% endif %}
-  </body>
-</html>
+    <input type="submit" value="Submit">
+  </form>
+</div>
+    <!-- table of contact is here -->
+    <div class="container contact-table">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Family</th>
+            <th>Job</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          {% if nm %}
+          {% for a in nm %}
+            <tr>
+              <td>{{ a.name }}</td>
+              <td>{{ a.family }}</td>
+              <td>{{ a.job }}</td>
+
+            </tr>
+          {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    <!-- end of table of contact -->
+    {% endblock %}
