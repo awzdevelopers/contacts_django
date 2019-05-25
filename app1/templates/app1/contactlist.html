@@ -38,6 +38,10 @@
             <li class="nav-item ">
               <a class="nav-link" href="{% url 'app1:NumberPage' %}">لیست کامل مخاطبین</a>
             </li>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="{% url 'app1:SearchPage' %}">جستجوی مخاطب</a>
+          </li>
           </ul>
           <!-- AWZ developers logo -->
           <div class="Logo">
@@ -49,6 +53,7 @@
     </div>
   </div>
   <!-- end of head content -->
+  {% block numbers %}
   <!--start location of site -->
   <div class="location">
     <div class="container">
@@ -78,6 +83,7 @@
               <th> شماره محل کار</th>
             </tr>
           </thead>
+            {% endblock numbers %}
           <tbody>
             {% if nu %}
             {% for a in nu %}
@@ -97,6 +103,8 @@
           </tbody>
         </table>
     </div>
+
+
   <!-- end of table-->
 
 <!-- <script src="js/jquery.slim.min.js"></script>
