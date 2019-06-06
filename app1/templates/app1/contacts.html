@@ -1,15 +1,17 @@
 {% extends 'app1/index.html' %}
   <!-- end of location -->
   {% block contacts %}
-
-<div>
-  <form method="POST">
+<!-- contact form is here -->
+<div class="container contact-list">
+  <form method="POST" class="form-inline">
     {{ frm.as_p }}
     {% csrf_token %}
 
-    <input type="submit" value="Submit">
+    <input type="submit" name="sub1" value="Send" class="btn-success contact-sub">
+
   </form>
 </div>
+<!-- contact form end -->
     <!-- table of contact is here -->
     <div class="container contact-table">
       <table class="table table-striped">
@@ -18,6 +20,8 @@
             <th>Name</th>
             <th>Family</th>
             <th>Job</th>
+            <th>X</th>
+
 
           </tr>
         </thead>
@@ -28,6 +32,8 @@
               <td>{{ a.name }}</td>
               <td>{{ a.family }}</td>
               <td>{{ a.job }}</td>
+              <td>{{ x }}</td>
+
 
             </tr>
           {% endfor %}

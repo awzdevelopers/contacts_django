@@ -33,12 +33,28 @@
                 <a class="nav-link" href="{% url 'app1:contactPage' %}">مخاطبین</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="#">درباره</a>
+                <a class="nav-link" href="{% url 'app1:ContactListPage' %}">لیست کامل</a>
               </li>
-            </ul>
+              <li class="nav-item">
+                <!-- <form method="GET">
+                  <input type="text" name="query1" value="">
+<input type="submit" name="sub2" value="GO..">
+                </form> -->
+                <!--<form class="form-inline">
+                <input class="form-control" type="search" placeholder="Search">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+                </form>
+
+              </li>
+            </ul>-->
             <!-- AWZ developers logo -->
             <div class="Logo">
-              <p>AWZ Developer's</p>
+              <!--<p>AWZ Developer's</p>-->
+              <!-- search box -->
+                <form action="{% url 'app1:contactPage' %}" class="search-box">
+                  <input type="search">
+                  <i class="fa fa-search"><input calss="fa fa-search" type="submit" name="submitbtn" value=""> </i>
+                </form>
             </div>
             <!-- End AWZ developer logo -->
           </div>
