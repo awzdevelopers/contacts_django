@@ -64,7 +64,7 @@ body {
     border: 0;
     display: none;
     font-size: 1em;
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 0 20px;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 .search-box:hover .fa{
-    background: #2c528c;
+    background: #2c528a;
     color: white;
 }
 .contact-list {

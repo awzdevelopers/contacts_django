@@ -33,7 +33,7 @@
                 <a class="nav-link" href="{% url 'app1:contactPage' %}">مخاطبین</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="{% url 'app1:ContactListPage' %}">لیست کامل</a>
+                <a class="nav-link" href="{% url 'app1:NumberPage' %}">اصلاعات کامل</a>
               </li>
               <li class="nav-item">
                 <!-- <form method="GET">
@@ -51,9 +51,10 @@
             <div class="Logo">
               <!--<p>AWZ Developer's</p>-->
               <!-- search box -->
-                <form action="{% url 'app1:contactPage' %}" class="search-box">
-                  <input type="search">
-                  <i class="fa fa-search"><input calss="fa fa-search" type="submit" name="submitbtn" value=""> </i>
+                <form action="{% url 'app1:contactPage' %}" class="search-box" method="GET">
+                  <input type="search" name="query1">
+                  <button type="submit" name="sub2" class="fa fa-search"></button>
+
                 </form>
             </div>
             <!-- End AWZ developer logo -->
@@ -76,43 +77,9 @@
       </div>
     </div>
     <a href="{% url 'app1:contactPage' %}">صفحه مخاطبین</a>
-    <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" >
-        <div class="text" name="DCH" value="">
-        <div>
-          {% if ph %}
-          <select>
-            {% for phon in ph %}
 
-            <option value="" DCH.value="">{{ phon.contacts.name }}</option>
-      {% endfor %}
-          </select>
-          {% endif %}
 
-        </div>
-      </div>
-      </div>
-      <div class="modal-footer" style="align-self:center">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
     {% endblock %}
   </body>
 </html>

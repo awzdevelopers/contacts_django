@@ -8,16 +8,6 @@ def index(request):
     phones=PhonesTable.objects.all()
     return render(request, 'app1/index.html', context={'ph':phones})
 
-def ContactListPage(request):
-    frm=PhoneForm
-    if request.method=='POST':
-        frm=PhoneForm(request.POST)
-        if frm.is_valid():
-            frm.save(commit=True)
-    phones=PhonesTable.objects.all()
-    return render(request, 'app1/contactlist.html', context={'nu':phones,'frm':frm})
-
-
 
 # <<<BY HME>>>
 
@@ -25,6 +15,7 @@ def ContactListPage(request):
 def contactPage(request):
     # variables intials
     x=""
+    contactsInfo=""
     names = ContactsTable.objects.all()
 
     frm=ContactForm
@@ -36,20 +27,17 @@ def contactPage(request):
 
             frm.save(commit=True)
         else:
-
-
             print("ERROR")
+
     if request.method=='GET' and 'sub2' in request.GET:
         x=request.GET['query1']
         if x:
-
-            names = ContactsTable.objects.filter(name=x)
+            contactsInfo=ContactsTable.objects.filter(name=x)
         else:
-            names = ContactsTable.objects.all()
+            contactsInfo=ContactsTable.objects.all()
 
 
-
-    names = names
+    names=contactsInfo
     return render(request, 'app1/contacts.html', context={'nm':names,'frm':frm})
 
 # def contactPage(request):

@@ -8,7 +8,6 @@ urlpatterns=[
 
          #<<< By HME >>>
          url(r'^numbers/', views.numberPage,name='NumberPage'),
-         url(r'^contactList/', views.ContactListPage,name='ContactListPage'),
 
 
 
